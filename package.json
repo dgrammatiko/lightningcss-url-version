@@ -1,0 +1,35 @@
+{
+  "name": "lighntningcss-url-version",
+  "version": "1.0.0",
+  "description": "A simple lighntningcss plugin that adds a hash on every relative url property",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./tests/test.mjs",
+    "update": "npm install $(npm outdated | cut -d' ' -f 1 | sed '1d' | xargs -I '$' echo '$@latest' | xargs echo)  --save-exact"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgrammatiko/lighntningcss-url-version.git"
+  },
+  "keywords": [
+    "lighntningcss",
+    "url",
+    "hash",
+    "version",
+    "versioning",
+    "image",
+    "font"
+  ],
+  "author": "Dimitris Grammatikogiannis <d.grammatiko@gmail.com> (https://dgrammatiko.online/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dgrammatiko/lighntningcss-url-version/issues"
+  },
+  "homepage": "https://github.com/dgrammatiko/lighntningcss-url-version#readme",
+  "devDependencies": {
+    "lightningcss": "^1.22.1"
+  },
+  "files": [
+    "index.mjs"
+  ]
+}
