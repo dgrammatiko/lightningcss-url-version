@@ -3,9 +3,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple lightningcss plugin that adds a hash on every relative url property",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "test": "node ./tests/test.mjs",
     "update": "npm install $(npm outdated | cut -d' ' -f 1 | sed '1d' | xargs -I '$' echo '$@latest' | xargs echo)  --save-exact"
