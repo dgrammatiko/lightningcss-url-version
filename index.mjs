@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import { existsSync, readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { dirname, resolve } from 'node:path';
 
 const defaultOptions = {
   variable: 'v',
@@ -8,22 +8,30 @@ const defaultOptions = {
   skipExternal: true,
   version: function (urlString) {
     let newUrlString = urlString;
-    if (skipExternal && (newUrlString.startsWith('http') || newUrlString.startsWith('//'))) {
+    if (this.skipExternal && (newUrlString.startsWith('http') || newUrlString.startsWith('//'))) {
       return `${newUrlString}`;
     }
 
-    if (newUrlString.contains('?')) {
+    if (newUrlString.includes('?')) {
       return `${newUrlString}`;
     }
 
-    if (this.from && existsSync(resolve(this.from))) {
-      const hash = createHash('md5')
-      hash.update(readFileSync(resolve(this.from)));
-
-      return `${newUrlString}?${this.variable}=${hash.digest('hex')}`;
+    if (!this.from) {
+      return `${newUrlString}?${this.variable}=${(new Date()).valueOf().toString()}`;
     }
 
-    return `${newUrlString}?${this.variable}=${(new Date()).valueOf().toString()}`;
+    if (!existsSync(resolve(`${dirname(this.from)}/${newUrlString}`))) {
+      return `${newUrlString}?${this.variable}=${(new Date()).valueOf().toString()}`;
+    }
+
+    const hash = createHash('md5')
+    hash.update(readFileSync(resolve(`${dirname(this.from)}/${newUrlString}`)));
+
+    const x = `${newUrlString}?${this.variable}=${hash.digest('hex').substring(0, 6)}`
+    console.log(newUrlString)
+    console.log(resolve(`${dirname(this.from)}/${newUrlString}`))
+    console.log(x)
+    return x;
   },
 };
 
@@ -39,7 +47,8 @@ export default function urlVersioning(opts) {
      * @returns {import('lightningcss').Url} - The transformed url object
      */
     Url(url) {
-      if (url.url.startsWith('url("data:') || url.url.startsWith('url(\'data:')) {
+      // Skip inline base64 encoded data
+      if (url.url.startsWith('data:')) {
         return url;
       }
 

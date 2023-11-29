@@ -1,7 +1,10 @@
 {
-  "name": "lighntningcss-url-version",
+  "name": "@dgrammatiko/lightningcss-url-version",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "1.0.0",
-  "description": "A simple lighntningcss plugin that adds a hash on every relative url property",
+  "description": "A simple lightningcss plugin that adds a hash on every relative url property",
   "main": "index.js",
   "scripts": {
     "test": "node ./tests/test.mjs",
@@ -9,10 +12,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dgrammatiko/lighntningcss-url-version.git"
+    "url": "git+https://github.com/dgrammatiko/lightningcss-url-version.git"
   },
   "keywords": [
-    "lighntningcss",
+    "lightningcss",
     "url",
     "hash",
     "version",
@@ -23,9 +26,9 @@
   "author": "Dimitris Grammatikogiannis <d.grammatiko@gmail.com> (https://dgrammatiko.online/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dgrammatiko/lighntningcss-url-version/issues"
+    "url": "https://github.com/dgrammatiko/lightningcss-url-version/issues"
   },
-  "homepage": "https://github.com/dgrammatiko/lighntningcss-url-version#readme",
+  "homepage": "https://github.com/dgrammatiko/lightningcss-url-version#readme",
   "devDependencies": {
     "lightningcss": "^1.22.1"
   },

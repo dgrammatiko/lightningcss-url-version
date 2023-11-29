@@ -1,9 +1,9 @@
 # lightningcss-url-version
 
-[![GitHub issues](https://img.shields.io/github/issues/dgrammatiko/lighntningcss-url-version)](https://github.com/dgrammatiko/lighntningcss-url-version/issues)
-[![GitHub license](https://img.shields.io/github/license/dgrammatiko/lighntningcss-url-version)](https://github.com/dgrammatiko/lighntningcss-url-version/blob/main/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/dgrammatiko/lightningcss-url-version)](https://github.com/dgrammatiko/lightningcss-url-version/issues)
+[![GitHub license](https://img.shields.io/github/license/dgrammatiko/lightningcss-url-version)](https://github.com/dgrammatiko/lightningcss-url-version/blob/main/LICENSE)
 
-[![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2Fdgrammatiko)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fdgrammatiko%2Flighntningcss-url-version)
+[![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2Fdgrammatiko)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fdgrammatiko%2Flightningcss-url-version)
 
 
 lightningcss-url-version is a simple lightningcss plugin that adds a hash on every `url` property.
@@ -11,11 +11,11 @@ lightningcss-url-version is a simple lightningcss plugin that adds a hash on eve
 ### Usage
 install it:
 ```bash
-npm i -D lightningcss-plugin-url-version
+npm i -D @dgrammatiko/lightningcss-plugin-url-version
 ```
 Include it in your scripts:
 ```js
-import UrlVersion from 'lightningcss-plugin-url-version';
+import UrlVersion from '@dgrammatiko/lightningcss-plugin-url-version';
 ```
 
 Use as any other lightningcss plugin:
