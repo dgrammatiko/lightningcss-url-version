@@ -27,11 +27,7 @@ const defaultOptions = {
     const hash = createHash('md5')
     hash.update(readFileSync(resolve(`${dirname(this.from)}/${newUrlString}`)));
 
-    const x = `${newUrlString}?${this.variable}=${hash.digest('hex').substring(0, 6)}`
-    console.log(newUrlString)
-    console.log(resolve(`${dirname(this.from)}/${newUrlString}`))
-    console.log(x)
-    return x;
+    return `${newUrlString}?${this.variable}=${hash.digest('hex').substring(0, 6)}`;
   },
 };
 
