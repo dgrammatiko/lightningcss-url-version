@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/dgrammatiko/lightningcss-url-version#readme",
   "devDependencies": {
-    "lightningcss": "^1.22.1"
+    "lightningcss": "^1.32.0"
   },
   "files": [
     "index.mjs"
